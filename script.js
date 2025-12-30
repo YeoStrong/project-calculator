@@ -51,6 +51,15 @@ numberButtons.forEach((button) => {
     const input = button.textContent;
 
     if (input === ".") {
+      if (resetDisplay) {
+        firstNumber = "0.";
+        operator = "";
+        secondNumber = "";
+        display.textContent = firstNumber;
+        resetDisplay = false;
+        return;
+      }
+
       if (operator === "") {
         if (firstNumber.includes(".")) return;
         if (firstNumber === "") firstNumber = "0";
